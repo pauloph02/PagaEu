@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
 
+import 'package:flutter/material.dart';
 import '../components/people.dart';
 import '../data/people_dao.dart';
 
@@ -99,9 +100,7 @@ class _FormPeopleScreenState extends State<FormPeopleScreen> {
                                     content: Text('Criando uma nova Tarefa'),
                                   ),
                                 );
-                                setState(() {
-                                  
-                                });
+                                
                                 Navigator.pop(context);
                                 setState(() {
                                   

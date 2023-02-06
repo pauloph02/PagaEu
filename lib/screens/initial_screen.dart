@@ -97,8 +97,11 @@ class _InitialScreenState extends State<InitialScreen> {
               ),
             ),
           ).then((value) => setState((){
-            
+
           }));
+          setState(() {
+            
+          });
         },
         child: const Icon(Icons.add),
       ),

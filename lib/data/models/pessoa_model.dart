@@ -2,11 +2,9 @@
 
 import 'package:paga_eu/data/domain/entity/pessoa_entity.dart';
 
-import '../people_dao.dart';
-
 class PessoaModel extends PessoaEntity {
   PessoaModel({
-    pessoaId,
+    pessoaId, 
     required nome, 
     required pago,
     required servico,
