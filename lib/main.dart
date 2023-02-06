@@ -1,5 +1,4 @@
 import 'package:get_it/get_it.dart';
-import 'package:paga_eu/data/task_inherited.dart';
 import 'package:paga_eu/preferenciaTema.dart';
 import 'package:paga_eu/screens/initial_screen.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +54,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           primaryColorLight: Colors.purple,
           brightness: tema,
         ),
-        home: TaskInherited(child: const InitialScreen()),
+        home:  InitialScreen(),
       ),
     );
   }

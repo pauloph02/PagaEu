@@ -60,7 +60,9 @@ class _ServiceScreenState extends State<ServiceScreen> {
                   GetIt.I.get<PessoaStore>().atualizarPago(pago: '0');
                   GetIt.I.get<PessoaStore>().atualizarServico(servico: widget.nome);
                   _botaoGravar;
-                  setarEstado;
+                  setState(() {
+                    
+                  });
                 Navigator.pop(context);
                 
                 }
@@ -73,6 +75,9 @@ class _ServiceScreenState extends State<ServiceScreen> {
             TextButton(
               onPressed: (){
                 Navigator.pop(context);
+                setState(() {
+                  
+                });
               },
               child: Text('Cancelar'),
             ),
@@ -119,10 +124,17 @@ class _ServiceScreenState extends State<ServiceScreen> {
         hoverColor: widget.cor,
         backgroundColor: widget.cor,
         
-        onPressed:() async {
+        onPressed:()  {
           /* await _dialog(); */
-          await Navigator.push(context,
-          MaterialPageRoute(builder: (context) => FormPeopleScreen(cor: otherColor, servico: widget.nome, taskContext: context,)));
+           Navigator.push(
+            context,
+          MaterialPageRoute(
+            builder: (contextNew) => FormPeopleScreen(
+              cor: otherColor, servico: widget.nome, taskContext: context,)
+              )
+              ).then((value) => setState(() {
+                
+              },));
           
           setState(() {},);
 

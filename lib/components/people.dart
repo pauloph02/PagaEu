@@ -57,18 +57,14 @@ class _PeopleState extends State<People> {
                         field.didChange(value);
                         
                          
-                        setState(() {
-                          
-                        });
+                        setState;
                       },
                       secondary: IconButton(
                         color: Colors.red,
                         icon: const Icon(Icons.remove_circle),
                         onPressed: (){PeopleDao().delete(widget.nome);
-                        setState(() {
-                          
-                        });
-                        setState;},
+                        setState;
+                        },
                       ),
                       );
                     } 
