@@ -10,6 +10,7 @@ import 'package:paga_eu/data/people_dao.dart';
 import 'package:paga_eu/data/task_dao.dart';
 import 'package:flutter/material.dart';
 import 'package:paga_eu/mobx_store/pessoa_store.dart';
+import 'package:shortid/shortid.dart';
 
 import 'formPeopleScreen.dart';
 
@@ -56,10 +57,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
                 if(nomeform.text == '' || nomeform.text == null || nomeform.text.isEmpty){
                   return ;
                 }else{
-                  PeopleDao().save(People(nomeform.text, 0, widget.nome, ));
+                  PeopleDao().save(People(nomeform.text, 0, widget.nome, shortid.generate() ));
                   GetIt.I.get<PessoaStore>().atualizarPago(pago: '0');
                   GetIt.I.get<PessoaStore>().atualizarServico(servico: widget.nome);
-                  _botaoGravar;
+                  /* _botaoGravar; */
                   setState(() {
                     
                   });
@@ -298,10 +299,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
     });
   }
 
-  _botaoGravar()async{
+  /* _botaoGravar()async{
     await PeopleDao().create(PessoaEntity(nome: _pessoaStore.nome, pago: _pessoaStore.pago, servico: _pessoaStore.servico));
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Pessoa Cadastrada")));
 
-  }
+  } */
   
 } 
