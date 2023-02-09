@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:shortid/shortid.dart';
 import '../components/people.dart';
 import '../data/people_dao.dart';
 
@@ -94,7 +95,7 @@ class _FormPeopleScreenState extends State<FormPeopleScreen> {
                                 // print(nameController.text);
                                 // print(difficultyController.text);
                                 // print(imageController.text);
-                                PeopleDao().save(People(nome.text, 0, widget.servico, ));
+                                PeopleDao().save(People(nome.text, 0, widget.servico, shortid.generate() ));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text('Criando uma nova Tarefa'),

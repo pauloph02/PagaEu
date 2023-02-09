@@ -40,6 +40,7 @@ dependencies:
   flutter_mobx:
   get_it:
   equatable:
+  shortid: ^0.1.2
 
 
 dev_dependencies:

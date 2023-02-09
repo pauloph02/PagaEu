@@ -4,11 +4,11 @@ import '../data/people_dao.dart';
 
 // ignore: must_be_immutable
 class People extends StatefulWidget {
-  //late int? pessoaID;
+  late String pessoaID;
   final String nome;
    int pago = 0;
    final String servico;
-  People( this.nome, this.pago, this.servico, /* this.id */ [Key? key,])
+  People( this.nome, this.pago, this.servico, this.pessoaID,  [Key? key,])
       : super(key: key);
 
 
@@ -53,7 +53,7 @@ class _PeopleState extends State<People> {
                           widget.pago = 0;
                         }
                        
-                          PeopleDao().update(People(widget.nome, widget.pago, widget.servico, /* widget.id */));
+                          PeopleDao().update(People(widget.nome, widget.pago, widget.servico,  widget.pessoaID ));
                         field.didChange(value);
                         
                          
@@ -62,8 +62,10 @@ class _PeopleState extends State<People> {
                       secondary: IconButton(
                         color: Colors.red,
                         icon: const Icon(Icons.remove_circle),
-                        onPressed: (){PeopleDao().delete(widget.nome);
-                        setState;
+                        onPressed: (){PeopleDao().delete(widget.pessoaID);
+                        setState(() {
+                          
+                        },);
                         },
                       ),
                       );
