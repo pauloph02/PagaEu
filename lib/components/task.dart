@@ -1,4 +1,4 @@
-import 'package:paga_eu/screens/list.dart';
+import 'package:paga_eu/screens/initial_screen.dart';
 import 'package:paga_eu/screens/serviceScreen.dart';
 import 'package:flutter/material.dart';
 import '../data/task_dao.dart';
@@ -97,6 +97,7 @@ class _TaskState extends State<Task> {
                           style: ElevatedButton.styleFrom(backgroundColor: otherColor),
                           onPressed: (){
                            mostrarDetalhes(widget.nome, otherColor,  widget.numeroPessoas,   widget.numeroPessoasPago,  widget.dataVencimento); 
+                           
                           /* Navigator.pushReplacement(context, MaterialPageRoute(builder: 
                           (context) => PessoaListPage())); */
 
@@ -118,7 +119,12 @@ class _TaskState extends State<Task> {
                           style: ElevatedButton.styleFrom(backgroundColor: otherColor),
                           onPressed: (){
                           TaskDao().delete(widget.nome);
-                          
+                           setState(() {
+                             setState(() {
+                               
+                             });
+                           });
+                      
                         },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

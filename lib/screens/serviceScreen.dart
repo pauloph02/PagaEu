@@ -2,17 +2,13 @@
 
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx/mobx.dart';
 import 'package:paga_eu/components/people.dart';
 import 'package:paga_eu/components/task.dart';
-import 'package:paga_eu/data/domain/entity/pessoa_entity.dart';
 import 'package:paga_eu/data/people_dao.dart';
 import 'package:paga_eu/data/task_dao.dart';
 import 'package:flutter/material.dart';
 import 'package:paga_eu/mobx_store/pessoa_store.dart';
 import 'package:shortid/shortid.dart';
-
-import 'formPeopleScreen.dart';
 
 
 // ignore: must_be_immutable
@@ -58,13 +54,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
                   return ;
                 }else{
                   PeopleDao().save(People(nomeform.text, 0, widget.nome, shortid.generate() ));
-                  GetIt.I.get<PessoaStore>().atualizarPago(pago: '0');
-                  GetIt.I.get<PessoaStore>().atualizarServico(servico: widget.nome);
-                  /* _botaoGravar; */
-                  setState(() {
-                    
-                  });
                 Navigator.pop(context);
+                setState(() {
+                  
+                });
                 
                 }
                 
@@ -126,8 +119,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
         backgroundColor: widget.cor,
         
         onPressed:()  {
-          /* await _dialog(); */
-           Navigator.push(
+            _dialog(); 
+           /* Navigator.push(
             context,
           MaterialPageRoute(
             builder: (contextNew) => FormPeopleScreen(
@@ -135,9 +128,11 @@ class _ServiceScreenState extends State<ServiceScreen> {
               )
               ).then((value) => setState(() {
                 
-              },));
+              },)); */
           
-          setState(() {},);
+          setState((){
+            
+          });
 
         } ,
       ),
